@@ -1,0 +1,614 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    border-radius: 16px;
+}
+
+h2 {
+    font-family: 'Markazi Text', serif;
+    font-weight: 500;
+    font-size: 64px;
+}
+
+h3 {
+    font-family: 'Markazi Text', serif;
+    font-weight: 400;
+    font-size: 40px;
+}
+
+.button-primary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 45px;
+    background-color: #f4ce14;
+    font-family: 'Karla', sans-serif;
+    text-decoration: none;
+    font-size: 18px;
+    color: #000;
+    font-weight: 700;
+    border-radius: 16px;
+    border: 1px solid #000;
+    transition: all 0.3s ease-in-out;
+}
+
+.button-primary:hover {
+    background-color: #000;
+    color: #edefee;
+}
+
+/*HEADER*/
+header .app-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 50px;
+    height: 100px;
+}
+
+header .app-header .logo {
+    width: 200px;
+}
+
+header .app-header ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    column-gap: 30px;
+}
+
+header .app-header ul li a {
+    text-decoration: none;
+    font-family: 'Karla', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    color: #000;
+}
+
+/*HERO BANNER HOME*/
+#hero-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #495e57;
+}
+
+#hero-banner .container {
+    display: flex;
+    width: 70vw;
+}
+
+#hero-banner .hero-call-to-action {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    padding: 50px;
+    flex: 1;
+}
+
+#hero-banner .hero-call-to-action h2 {
+    color: #f4ce14;
+    line-height: 0.5em;
+}
+
+#hero-banner .hero-call-to-action h3 {
+    color: #fff;
+    line-height: 0.5em;
+}
+
+#hero-banner .hero-call-to-action p {
+    font-family: 'Karla', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: #fff;
+    margin: 30px 0;
+}
+
+#hero-banner .hero-image {
+    position: relative;
+    flex: 1;
+}
+
+#hero-banner .hero-image img {
+    position: absolute;
+    left: 20px;
+    top: 30px;
+    border: 1px solid #000;
+    box-shadow: -5px 5px 5px #333;
+}
+
+/*WEEK SPECIALS HOME*/
+#week-specials {
+    padding: 70px 50px;
+}
+
+#week-specials .title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#week-specials .specials {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    column-gap: 50px;
+    padding: 50px 30px;
+}
+
+#week-specials article {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+#week-specials article .dish-img {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 200px;
+    border: 1px solid #000;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+#week-specials article .dish-img.first {
+    background-image: url('./assets/img/home/greek\ salad.jpg');
+}
+
+#week-specials article .dish-img.second {
+    background-image: url('./assets/img/home/bruchetta.png');
+}
+
+#week-specials article .dish-img.third {
+    background-image: url('./assets/img/home/lemon\ dessert.jpg');
+}
+
+#week-specials article .dish-information {
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    height: 180px;
+    background-color: #edefee;
+    position: relative;
+}
+
+#week-specials article .dishname-price {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#week-specials article .dishname-price h4 {
+    font-family: 'Karla', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+}
+
+#week-specials article .dishname-price span {
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #ee9972;
+}
+
+#week-specials article .dish-description p {
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #495e57;
+}
+
+#week-specials article .dish-delivery {
+    position: absolute;
+    bottom: 20px;
+}
+
+#week-specials article .dish-delivery span {
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+}
+
+/*ABOUT HOME*/
+#about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #edefee;
+    min-height: 700px;
+}
+
+#about .container {
+    display: flex;
+    width: 70vw;
+}
+
+#about .banner-call-to-action {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    padding: 50px;
+    flex: 1;
+}
+
+#about .banner-call-to-action h2 {
+    color: #495e57;
+    line-height: 0.5em;
+}
+
+#about .banner-call-to-action h3 {
+    color: #f4ce14;
+    line-height: 0.5em;
+}
+
+#about .banner-call-to-action p {
+    font-family: 'Karla', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: #333;
+    margin: 30px 0px;
+}
+
+#about .banner-images {
+    position: relative;
+    flex: 1;
+}
+
+#about .banner-images .back {
+    background-image: url('./assets/img/home/restauranfood.jpg');
+    top: 30%;
+    box-shadow: -5px 5px 5px #333;
+}
+
+#about .banner-images .front {
+    background-image: url('./assets/img/reservations/restaurant.jpg');
+    left: 30%;
+    box-shadow: -2px 2px 2px #333;
+}
+
+#about .banner-images .image {
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 350px;
+    border: 1px solid #000;
+    border-radius: 16px;
+}
+
+/*FOOTER*/
+footer {
+    display: flex;
+    flex-direction: row;
+    column-gap: 30px;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding: 50px 20px;
+    background-color: #495e57;
+}
+
+footer .logo {
+    width: 150px;
+}
+
+footer h3 {
+    margin-bottom: 15px;
+    color: #f4ce14;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer li a {
+    text-decoration: none;
+    font-family: 'Karla', serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #edefee;
+    line-height: 1.5em;
+}
+
+/*HERO RERSERVATIONS*/
+#hero-reservations {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./assets/img/reservations/Mario\ and\ Adrian\ b.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    min-height: 500px;
+}
+
+#hero-reservations .container {
+    display: flex;
+    width: 70vw;
+    z-index: 2;
+}
+
+#hero-reservations .hero-call-to-action {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    padding: 50px;
+    flex: 1;
+}
+
+#hero-reservations .hero-call-to-action h2 {
+    color: #f4ce14;
+    line-height: 0.5em;
+}
+
+#hero-reservations .hero-call-to-action h3 {
+    color: #fff;
+    line-height: 0.5em;
+}
+
+#hero-reservations .hero-call-to-action p {
+    font-family: 'Karla', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: #fff;
+    margin: 30px 0;
+}
+
+#hero-reservations .overlay {
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    background-color: #495e57;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+#hero-reservations .empty-column {
+    flex: 1;
+}
+
+/*MAKE YOUR RESERVATIONS FORM*/
+#reservations {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 60px 100px;
+    background-color: #495e57;
+}
+
+#reservations h2 {
+    color: #f4ce14;
+}
+
+#reservations .container {
+    display: flex;
+    flex-direction: row;
+    column-gap: 50px;
+    width: 70vw;
+}
+
+#reservations h3 {
+    font-family: 'Karla', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #edefee;
+}
+
+#reservations .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+#reservations .images {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 50px;
+    flex: 1;
+}
+
+#reservations form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+form label {
+    font-family: 'Karla', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    width: 100%;
+}
+
+form input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    background-image: url('./assets/img/reservations/calendar.png');
+    width: 24px;
+    height: 24px;
+}
+
+form input[type="text"],
+input[type="datetime-local"],
+input[type="number"],
+input[type="email"],
+input[type="tel"],
+select {
+    display: block;
+    width: 100%;
+    height: 35px;
+    border-radius: 16px;
+    padding: 0px 10px;
+    font-family: 'Karla', serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+form input[type="text"]::placeholder,
+input[type="number"]::placeholder,
+input[type="email"]::placeholder,
+input[type="tel"]::placeholder {
+    font-family: 'Karla', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+}
+
+form h4 {
+    font-family: 'Karla', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #edefee;
+}
+
+form .radio-group {
+    display: flex;
+    flex-direction: row;
+}
+
+form .radio-group label {
+    color: #edefee;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+form .radio-group label,
+input {
+    flex: 1;
+}
+
+form input[type="checkbox"] {
+    margin-right: 30px;
+    margin-left: 10px;
+}
+
+form .checkbox-terms {
+    margin: 10px 0px;
+}
+
+form .checkbox-terms label {
+    color: #edefee;
+}
+
+form input[type="submit"] {
+    background-color: #f4ce14;
+    font-family: 'Karla', sans-serif;
+    text-decoration: none;
+    font-size: 18px;
+    color: #000;
+    font-weight: 700;
+    border-radius: 16px;
+    border: 1px solid #000;
+    padding: 10px 0px;
+    transition: all 0.3s ease-in-out;
+}
+
+form input[type="submit"]:hover {
+    background-color: #000;
+    color: #edefee;
+}
+
+#reservations .images img {
+    border: 1px solid #000;
+    box-shadow: -5px 5px 5px #333;
+}
+
+/*WEEKLY SPECIALS*/
+#weekly-specials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #edefee;
+    min-height: 600px;
+}
+
+#weekly-specials .container {
+    display: flex;
+    width: 70vw;
+}
+
+#weekly-specials .banner-call-to-action {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    padding: 50px;
+    flex: 1;
+}
+
+#weekly-specials .banner-call-to-action h2 {
+    color: #495e57;
+    line-height: 0.5em;
+}
+
+#weekly-specials .banner-call-to-action h3 {
+    color: #f4ce14;
+    line-height: 0.5em;
+}
+
+#weekly-specials .banner-call-to-action p {
+    font-family: 'Karla', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: #333;
+    margin: 30px 0px;
+}
+
+#weekly-specials .banner-images {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+#weekly-specials .banner-images .row {
+    display: flex;
+    flex-direction: row;
+    column-gap: 15px;
+}
+
+#weekly-specials .banner-images .row .image {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #000;
+    border-radius: 16px;
+    box-shadow: -5px 5px 5px #333;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#weekly-specials .banner-images .row .image.first {
+    background-image: url('./assets/img/reservations/salmon.jpg');
+}
+
+#weekly-specials .banner-images .row .image.second {
+    background-image: url('./assets/img/reservations/wine.jpg');
+}
+
+#weekly-specials .banner-images .row .image.third {
+    background-image: url('./assets/img/reservations/salad.jpg');
+}
+
+#weekly-specials .banner-images .row .image.fourth {
+    background-image: url('./assets/img/home/bruchetta.png');
+}
