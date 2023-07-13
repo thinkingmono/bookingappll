@@ -42,10 +42,14 @@ h3 {
 }
 
 /*HEADER*/
+header .app-header-mobile {
+    display: none;
+}
+
 header .app-header {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     column-gap: 50px;
     height: 100px;
@@ -178,9 +182,10 @@ header .app-header ul li a {
     display: flex;
     flex-direction: column;
     row-gap: 20px;
-    height: 180px;
+    min-height: 220px;
     background-color: #edefee;
-    position: relative;
+    /* position: relative; */
+    justify-content: space-around;
 }
 
 #week-specials article .dishname-price {
@@ -211,10 +216,10 @@ header .app-header ul li a {
     color: #495e57;
 }
 
-#week-specials article .dish-delivery {
+/* #week-specials article .dish-delivery {
     position: absolute;
     bottom: 20px;
-}
+} */
 
 #week-specials article .dish-delivery span {
     font-family: 'Karla', sans-serif;
@@ -458,6 +463,7 @@ select {
     height: 35px;
     border-radius: 16px;
     padding: 0px 10px;
+    box-sizing: border-box;
     font-family: 'Karla', serif;
     font-size: 16px;
     font-weight: 400;
@@ -527,9 +533,28 @@ form input[type="submit"]:hover {
     color: #edefee;
 }
 
-#reservations .images img {
+/* #reservations .images img {
     border: 1px solid #000;
     box-shadow: -5px 5px 5px #333;
+} */
+
+#reservations .images .img {
+    width: 90%;
+    height: 40%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 1px solid #000;
+    border-radius: 16px;
+    box-shadow: -5px 5px 5px #333;
+}
+
+#reservations .images .img.up {
+    background-image: url(./assets/img/reservations/restaurant.jpg);
+}
+
+#reservations .images .img.down {
+    background-image: url(./assets/img/reservations/restaurant\ chef\ B.jpg);
 }
 
 /*WEEKLY SPECIALS*/
@@ -584,6 +609,7 @@ form input[type="submit"]:hover {
     display: flex;
     flex-direction: row;
     column-gap: 15px;
+    justify-content: center;
 }
 
 #weekly-specials .banner-images .row .image {
@@ -611,4 +637,418 @@ form input[type="submit"]:hover {
 
 #weekly-specials .banner-images .row .image.fourth {
     background-image: url('./assets/img/home/bruchetta.png');
+}
+
+@media screen and (min-width: 320px) and (max-width: 424px) {
+    /*HERO BANNER HOME*/
+    #hero-banner .container {
+        align-items: center;
+        justify-content: center;
+    }
+
+    #hero-banner .hero-call-to-action {
+        width: 90vw;
+        text-align: center;
+    }
+
+    #hero-banner .hero-call-to-action h2,
+    #hero-banner .hero-call-to-action h3{
+        line-height: 0.8em;
+    }
+
+    #hero-banner .hero-call-to-action p{
+        width: 90vw;
+    }
+
+    #hero-banner .hero-call-to-action a{
+        align-self: center;
+    }
+
+    #hero-banner .hero-image{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 425px) {
+
+    #week-specials .specials {
+        flex-direction: column;
+        row-gap: 30px;
+    }
+
+    #week-specials .specials article {
+        width: 90%;
+    }
+
+    #week-specials .specials {
+        padding: 50px 0;
+        align-items: center;
+    }
+
+    #week-specials article .dish-information {
+        min-height: 200px;
+    }
+
+    /*FOOTER*/
+    footer {
+        flex-direction: column;
+        row-gap: 30px;
+    }
+
+    footer div:first-child {
+        align-self: center;
+    }
+}
+
+@media screen and (min-width: 426px) and (max-width: 768px) {
+
+    /*FOOTER*/
+    footer {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    footer div:first-child {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    footer>div {
+        width: 40vw;
+    }
+
+    footer h3 {
+        line-height: 0.8em;
+    }
+}
+
+@media screen and (min-width: 426px) and (max-width: 915px) {
+
+    /*WEEK SPECIALS*/
+    #week-specials {
+        padding: 70px 20px;
+    }
+
+    #week-specials .specials {
+        flex-direction: column;
+        row-gap: 30px;
+        padding: 50px 0px;
+    }
+
+    #week-specials .specials article {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    #week-specials .specials article .dish-img {
+        border-radius: 0px;
+        flex: 1;
+        height: auto;
+    }
+
+    #week-specials .specials article .dish-information {
+        flex: 1;
+        min-height: 220px;
+    }
+}
+
+@media screen and (max-width: 615px) {
+
+    /*ABOUT*/
+    #about {
+        min-height: auto;
+        padding: 50px 20px 60px;
+    }
+
+    #about .container {
+        width: 90vw;
+        flex-direction: column;
+        row-gap: 30px;
+    }
+
+    #about .banner-call-to-action {
+        padding: 30px 10px;
+    }
+
+    #about .banner-call-to-action h2 {
+        line-height: 0.8em;
+    }
+
+    #about .banner-images {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+
+    #about .banner-images .image {
+        position: static;
+        width: 150px;
+        height: 200px;
+        margin-bottom: 20px;
+    }
+
+    /*MAKE YOUR RESERVATION*/
+    #reservations {
+        padding: 50px 20px 100px;
+    }
+
+    #reservations h2 {
+        line-height: 0.8em;
+        text-align: center;
+    }
+
+    #reservations .container {
+        width: 90vw;
+    }
+
+    #reservations .images {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 616px) and (max-width: 1024px) {
+
+    /*ABOUT*/
+    #about .container {
+        width: 90vw;
+    }
+
+    #about .banner-call-to-action {
+        padding: 30px 20px;
+    }
+
+    #about .banner-images .image {
+        width: 25vw;
+        height: 30vw;
+        /* max-width: 300px;
+        max-height: 350px; */
+    }
+
+    #about .banner-call-to-action h2,
+    #about .banner-call-to-action h3 {
+        line-height: 0.8em;
+    }
+
+    /*MAKE YOUR RESERVATION*/
+    #reservations {
+        padding: 50px 20px 100px;
+    }
+
+    #reservations .container {
+        width: 90vw;
+        column-gap: 20px;
+    }
+
+    #reservations .images {
+        justify-content: space-evenly;
+    }
+
+    /* #reservations .images img{
+        width: 35vw;
+    } */
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+    /*HEADER*/
+    header .app-header ul {
+        column-gap: 20px;
+    }
+
+    /*HERO BANNER*/
+    #hero-banner .container {
+        width: 90vw;
+    }
+
+    #hero-banner .hero-call-to-action {
+        padding: 30px 20px;
+    }
+
+    #hero-banner .hero-call-to-action h2,
+    #hero-banner .hero-call-to-action h3 {
+        line-height: 0.8em;
+    }
+
+    #hero-banner .hero-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #hero-banner .hero-image img {
+        position: static;
+        width: 35vw;
+        height: 35vw;
+        max-height: 300px;
+        max-width: 300px;
+    }
+
+    /*HERO RESERVATIONS*/
+    #hero-reservations .container {
+        width: 90vw;
+    }
+
+    #hero-reservations .hero-call-to-action {
+        padding: 30px 10px;
+    }
+
+    #hero-reservations .hero-call-to-action h2,
+    #hero-reservations .hero-call-to-action h3 {
+        line-height: 0.8em;
+    }
+
+    /*WEEKLY SPECIALS*/
+    #weekly-specials .container {
+        width: 90vw;
+    }
+
+    #weekly-specials .banner-call-to-action {
+        padding: 30px;
+    }
+
+    #weekly-specials .banner-call-to-action h2,
+    #weekly-specials .banner-call-to-action h3 {
+        line-height: 0.8em;
+    }
+
+    #weekly-specials .banner-images {
+        justify-content: center;
+    }
+
+    #weekly-specials .banner-images .row .image {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    /*WEEK SPECIALS*/
+    #week-specials .title {
+        flex-direction: column;
+        row-gap: 30px;
+    }
+
+    #week-specials .title h2 {
+        line-height: 0.8em;
+        text-align: center;
+    }
+
+}
+
+@media screen and (min-width: 425px) and (max-width: 768px){
+    /*HERO BANNER HOME*/
+    #hero-banner .hero-call-to-action p {
+        width: 50vw;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    /*HEADER*/
+    header .app-header-mobile {
+        display: block;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 15px 20px;
+    }
+
+    header .app-header {
+        display: none;
+    }
+
+    /*HERO BANNER MOBILE*/
+    #hero-banner .container {
+        position: relative;
+        width: 90vw;
+    }
+
+    #hero-banner .hero-call-to-action {
+        padding: 30px 10px;
+        width: 70vw;
+        flex: auto;
+    }
+
+    #hero-banner .hero-image {
+        position: absolute;
+        left: 60%;
+        top: 25%;
+    }
+
+    #hero-banner .hero-image img {
+        width: 30vw;
+        height: 30vw;
+    }
+
+    /*WEEKS SPECIALS*/
+    #week-specials {
+        padding: 40px 20px;
+    }
+
+    /*HERO RESERVATIONS*/
+    #hero-reservations .container {
+        width: 90vw;
+    }
+
+    #hero-reservations .hero-call-to-action {
+        padding: 30px 10px;
+        text-align: center;
+        row-gap: 20px;
+    }
+
+    #hero-reservations .hero-call-to-action h2,
+    #hero-reservations .hero-call-to-action h3 {
+        line-height: 0.8em;
+    }
+
+    #hero-reservations .hero-call-to-action a {
+        margin: auto;
+    }
+
+    #hero-reservations .empty-column {
+        display: none;
+    }
+
+    /*WEEKLY SPECIALS*/
+    #weekly-specials {
+        padding: 60px 20px;
+    }
+
+    #weekly-specials .container {
+        width: 90vw;
+        flex-direction: column;
+    }
+
+    #weekly-specials .banner-call-to-action {
+        text-align: center;
+    }
+
+    #weekly-specials .banner-call-to-action h2,
+    #weekly-specials .banner-call-to-action h3 {
+        line-height: 0.8em;
+    }
+
+    #weekly-specials .banner-call-to-action a {
+        align-self: center;
+    }
+}
+
+@media screen and (min-width: 916px) and (max-width: 1024px) {
+
+    /*WEEK SPECIALS*/
+    #week-specials .specials {
+        column-gap: 10px;
+    }
+
+    #week-specials article .dish-information {
+        min-height: 220px;
+    }
+
+    #week-specials article .dish-description {
+        margin-bottom: 15px;
+    }
 }

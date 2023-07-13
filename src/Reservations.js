@@ -71,8 +71,10 @@ function Reservations() {
                             </form>
                         </div>
                         <div className="images">
-                            <img src={Restaurant} alt="Preview Restaurant" width="400" />
-                            <img src={Chef} alt="Chef spicying food" width="400" />
+                            <div className="img up"></div>
+                            <div className="img down"></div>
+                            {/* <img src={Restaurant} alt="Preview Restaurant" width="400" />
+                            <img src={Chef} alt="Chef spicying food" width="400" /> */}
                         </div>
                     </div>
                 </section>
