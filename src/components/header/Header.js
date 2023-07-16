@@ -1,8 +1,7 @@
 import Nav from './Nav';
-import './App.css';
-import logo from './assets/img/Logo.svg';
-import menu from './assets/img/icon _hamburger menu.svg';
-import basket from './assets/img/basket .svg';
+import logo from '../../assets/img/Logo.svg';
+import menu from '../../assets/img/icon _hamburger menu.svg';
+import basket from '../../assets/img/basket .svg';
 
 function Header() {
     return (

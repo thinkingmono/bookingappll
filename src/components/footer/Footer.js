@@ -1,5 +1,5 @@
-import logo from './assets/img/little-lemon-logo-white-nobck.png';
-import Nav from './Nav';
+import logo from '../../assets/img/little-lemon-logo-white-nobck.png';
+import Nav from '../header/Nav';
 
 function Footer() {
     return (

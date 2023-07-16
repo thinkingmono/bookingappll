@@ -155,26 +155,19 @@ header .app-header ul li a {
 }
 
 #week-specials article .dish-img {
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
     width: 100%;
     height: 200px;
     border: 1px solid #000;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
+    overflow: hidden;
 }
 
-#week-specials article .dish-img.first {
-    background-image: url('./assets/img/home/greek\ salad.jpg');
-}
-
-#week-specials article .dish-img.second {
-    background-image: url('./assets/img/home/bruchetta.png');
-}
-
-#week-specials article .dish-img.third {
-    background-image: url('./assets/img/home/lemon\ dessert.jpg');
+#week-specials article .dish-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 #week-specials article .dish-information {
@@ -215,11 +208,6 @@ header .app-header ul li a {
     font-weight: 400;
     color: #495e57;
 }
-
-/* #week-specials article .dish-delivery {
-    position: absolute;
-    bottom: 20px;
-} */
 
 #week-specials article .dish-delivery span {
     font-family: 'Karla', sans-serif;
@@ -274,26 +262,29 @@ header .app-header ul li a {
 }
 
 #about .banner-images .back {
-    background-image: url('./assets/img/home/restauranfood.jpg');
     top: 30%;
     box-shadow: -5px 5px 5px #333;
 }
 
 #about .banner-images .front {
-    background-image: url('./assets/img/reservations/restaurant.jpg');
     left: 30%;
     box-shadow: -2px 2px 2px #333;
 }
 
 #about .banner-images .image {
     position: absolute;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
     width: 300px;
     height: 350px;
     border: 1px solid #000;
     border-radius: 16px;
+    overflow: hidden;
+}
+
+#about .banner-images .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 /*FOOTER*/
@@ -533,28 +524,20 @@ form input[type="submit"]:hover {
     color: #edefee;
 }
 
-/* #reservations .images img {
-    border: 1px solid #000;
-    box-shadow: -5px 5px 5px #333;
-} */
-
 #reservations .images .img {
     width: 90%;
     height: 40%;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
     border: 1px solid #000;
     border-radius: 16px;
     box-shadow: -5px 5px 5px #333;
+    overflow: hidden;
 }
 
-#reservations .images .img.up {
-    background-image: url(./assets/img/reservations/restaurant.jpg);
-}
-
-#reservations .images .img.down {
-    background-image: url(./assets/img/reservations/restaurant\ chef\ B.jpg);
+#reservations .images .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 /*WEEKLY SPECIALS*/
@@ -618,25 +601,14 @@ form input[type="submit"]:hover {
     border: 1px solid #000;
     border-radius: 16px;
     box-shadow: -5px 5px 5px #333;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    overflow: hidden;
 }
 
-#weekly-specials .banner-images .row .image.first {
-    background-image: url('./assets/img/reservations/salmon.jpg');
-}
-
-#weekly-specials .banner-images .row .image.second {
-    background-image: url('./assets/img/reservations/wine.jpg');
-}
-
-#weekly-specials .banner-images .row .image.third {
-    background-image: url('./assets/img/reservations/salad.jpg');
-}
-
-#weekly-specials .banner-images .row .image.fourth {
-    background-image: url('./assets/img/home/bruchetta.png');
+#weekly-specials .banner-images .row .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 @media screen and (min-width: 320px) and (max-width: 424px) {
