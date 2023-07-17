@@ -163,7 +163,7 @@ header .app-header ul li a {
     overflow: hidden;
 }
 
-#week-specials article .dish-img img{
+#week-specials article .dish-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -177,7 +177,6 @@ header .app-header ul li a {
     row-gap: 20px;
     min-height: 220px;
     background-color: #edefee;
-    /* position: relative; */
     justify-content: space-around;
 }
 
@@ -216,12 +215,86 @@ header .app-header ul li a {
     color: #000;
 }
 
+/*TESTIMONIALS*/
+#testimonials {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #edefee;
+    padding: 100px 0px 120px;
+    row-gap: 30px;
+}
+
+#testimonials .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80vw;
+    column-gap: 15px;
+}
+
+#testimonials .testimonial .testimonial-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#testimonials .testimonial .testimonial-info .rating-image-name {
+    display: flex;
+    flex-direction: column;
+}
+
+#testimonials .testimonial .rating-image-name .rating {
+    width: 100px;
+    height: 30px;
+}
+
+#testimonials .testimonial .rating-image-name .rating img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+#testimonials .testimonial .rating-image-name .image,
+#testimonials .testimonial .rating-image-name .name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#testimonials .testimonial .rating-image-name .name {
+    font-family: 'Karla', serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 5px 0;
+}
+
+#testimonials .testimonial .rating-image-name .image img {
+    width: 80px;
+    height: 80px;
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
+}
+
+#testimonials .testimonial .testimonial-info .comment {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Karla', serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
 /*ABOUT HOME*/
 #about {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #edefee;
     min-height: 700px;
 }
 
@@ -280,7 +353,7 @@ header .app-header ul li a {
     overflow: hidden;
 }
 
-#about .banner-images .image img{
+#about .banner-images .image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -604,7 +677,7 @@ form input[type="submit"]:hover {
     overflow: hidden;
 }
 
-#weekly-specials .banner-images .row .image img{
+#weekly-specials .banner-images .row .image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -612,6 +685,7 @@ form input[type="submit"]:hover {
 }
 
 @media screen and (min-width: 320px) and (max-width: 424px) {
+
     /*HERO BANNER HOME*/
     #hero-banner .container {
         align-items: center;
@@ -624,25 +698,26 @@ form input[type="submit"]:hover {
     }
 
     #hero-banner .hero-call-to-action h2,
-    #hero-banner .hero-call-to-action h3{
+    #hero-banner .hero-call-to-action h3 {
         line-height: 0.8em;
     }
 
-    #hero-banner .hero-call-to-action p{
+    #hero-banner .hero-call-to-action p {
         width: 90vw;
     }
 
-    #hero-banner .hero-call-to-action a{
+    #hero-banner .hero-call-to-action a {
         align-self: center;
     }
 
-    #hero-banner .hero-image{
+    #hero-banner .hero-image {
         display: none;
     }
 }
 
 @media screen and (max-width: 425px) {
 
+    /*WEEK SPECIALS*/
     #week-specials .specials {
         flex-direction: column;
         row-gap: 30px;
@@ -728,6 +803,12 @@ form input[type="submit"]:hover {
 
 @media screen and (max-width: 615px) {
 
+    /*TESTIMONIALS*/
+    #testimonials .container {
+        flex-direction: column;
+        row-gap: 30px;
+    }
+
     /*ABOUT*/
     #about {
         min-height: auto;
@@ -783,6 +864,17 @@ form input[type="submit"]:hover {
 
 @media screen and (min-width: 616px) and (max-width: 1024px) {
 
+    /*TESTIMONIALS*/
+    #testimonials .container {
+        flex-wrap: wrap;
+        width: 90vw;
+    }
+
+    #testimonials .container .testimonial {
+        width: 45%;
+        margin-bottom: 15px;
+    }
+
     /*ABOUT*/
     #about .container {
         width: 90vw;
@@ -817,10 +909,14 @@ form input[type="submit"]:hover {
     #reservations .images {
         justify-content: space-evenly;
     }
+}
 
-    /* #reservations .images img{
-        width: 35vw;
-    } */
+@media screen and (min-width: 1025px){
+
+    /*TESTIMONIALS*/
+    #testimonials .container {
+        width: 90vw;
+    }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
@@ -911,7 +1007,8 @@ form input[type="submit"]:hover {
 
 }
 
-@media screen and (min-width: 425px) and (max-width: 768px){
+@media screen and (min-width: 425px) and (max-width: 768px) {
+
     /*HERO BANNER HOME*/
     #hero-banner .hero-call-to-action p {
         width: 50vw;
