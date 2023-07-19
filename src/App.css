@@ -510,14 +510,14 @@ form label {
     width: 100%;
 }
 
-form input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+form input[type="date"]::-webkit-calendar-picker-indicator {
     background-image: url('./assets/img/reservations/calendar.png');
     width: 24px;
     height: 24px;
 }
 
 form input[type="text"],
-input[type="datetime-local"],
+input[type="date"],
 input[type="number"],
 input[type="email"],
 input[type="tel"],
