@@ -3,18 +3,22 @@ import HeroBook from './HeroBook';
 import BookingForm from './BookingForm';
 import CallToAction from './CallToAction';
 
-const updateTimes = (state, action) => {
-    // console.log(action.type+'\n'+typeof action.type+'\n'+(action.type !== '2023-07-29'));
-    if (action.type !== '2023-07-29') {
-        state = ['08:00'];
-    }else{
-        state = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
-    }
-    return state;
-}
-
 function BookingPage() {
+    const updateTimes = (state, action) => {
+        // console.log(action.type+'\n'+typeof action.type+'\n'+(action.type !== '2023-07-29'));
+        if (action.type !== '2023-07-29') {
+            state = ['08:00'];
+        }else{
+            state = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+        }
+        return state;
+    }
+
     const initializeTimes = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+    // const initializeTimes = () => {
+    //     const initial = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+    //     return initial;
+    // }
 
     const [state, dispatch] = useReducer(updateTimes, initializeTimes);
 

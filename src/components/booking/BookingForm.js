@@ -32,23 +32,25 @@ const BookingForm = (props) => {
                             {/* Booking Info */}
                             <h3>Reservation</h3>
                             <label htmlFor="res-date">Date *
-                                <input type="date" id="res-date" name="res-date" required value={form.inputDate}
+                                <input data-testid="res-date" type="date" id="res-date" name="res-date" required value={form.inputDate}
                                     onChange={(e) => {
                                         // console.log(e.target.value);
-                                        props.dispatch({type: e.target.value});
+                                        props.dispatch({ type: e.target.value });
                                         // console.log(props.availableTimes);
                                         setForm({ ...form, inputDate: e.target.value })
                                     }
                                     } />
                             </label>
                             <label htmlFor="res-time">Time *
-                                <select id="res-time " name="res-time" value={form.selectTime}
+                                <select data-testid="res-time" id="res-time " name="res-time" value={form.selectTime}
                                     onChange={(e) => {
                                         setForm({ ...form, selectTime: e.target.value });
                                     }}>
-                                    {props.availableTimes.length > 0 ? props.availableTimes.map((time) => {
-                                        return <option key={time} value={time}>{time}</option>
+                                    {props.availableTimes ? props.availableTimes.map((time) => {
+                                        // console.log('time: '+time+'\n'+'typeof time: '+typeof time);
+                                        return <option data-testid="available-time" key={time} value={time}>{time}</option>
                                     }):null}
+                                    {/* {console.log('props.availableTimes: ' + props.availableTimes() + '\n' + 'props.availableTimes.length: ' + props.availableTimes().length + '\n' + 'typeof props.availableTimes: ' + typeof props.availableTimes())} */}
                                 </select>
                             </label>
                             <label htmlFor="guest">
