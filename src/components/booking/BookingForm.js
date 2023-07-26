@@ -4,6 +4,7 @@ import ImgDown from '../../assets/img/reservations/restaurant chef B.jpg';
 
 
 const BookingForm = (props) => {
+
     const [form, setForm] = useState({
         inputDate: '',
         selectTime: '',
@@ -34,9 +35,7 @@ const BookingForm = (props) => {
                             <label htmlFor="res-date">Date *
                                 <input data-testid="res-date" type="date" id="res-date" name="res-date" required value={form.inputDate}
                                     onChange={(e) => {
-                                        // console.log(e.target.value);
-                                        props.dispatch({ type: e.target.value });
-                                        // console.log(props.availableTimes);
+                                        props.dispatch({ type: 'DATE_CHANGE', date: e.target.value });
                                         setForm({ ...form, inputDate: e.target.value })
                                     }
                                     } />
@@ -47,10 +46,8 @@ const BookingForm = (props) => {
                                         setForm({ ...form, selectTime: e.target.value });
                                     }}>
                                     {props.availableTimes ? props.availableTimes.map((time) => {
-                                        // console.log('time: '+time+'\n'+'typeof time: '+typeof time);
                                         return <option data-testid="available-time" key={time} value={time}>{time}</option>
-                                    }):null}
-                                    {/* {console.log('props.availableTimes: ' + props.availableTimes() + '\n' + 'props.availableTimes.length: ' + props.availableTimes().length + '\n' + 'typeof props.availableTimes: ' + typeof props.availableTimes())} */}
+                                    }) : console.log('availableTimes is empty')}
                                 </select>
                             </label>
                             <label htmlFor="guest">
