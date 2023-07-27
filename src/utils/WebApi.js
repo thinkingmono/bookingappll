@@ -18,7 +18,15 @@ const fetchAPI = date => {
     return result;
 };
 
-const submitAPI = formData => true;
+// const submitAPI = formData => true;
+const submitAPI = (formData) => {
+    if(formData){
+        console.log(formData);
+        return true;
+    }else{
+        return false;
+    }
+}
 
 export {
     fetchAPI,

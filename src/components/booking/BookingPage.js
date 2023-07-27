@@ -1,5 +1,6 @@
 import React, { useReducer } from 'react';
 import { fetchAPI, submitAPI } from '../../utils/WebApi';
+import { useNavigate } from 'react-router-dom';
 import HeroBook from './HeroBook';
 import BookingForm from './BookingForm';
 import CallToAction from './CallToAction';
@@ -17,6 +18,16 @@ function BookingPage() {
     }
 
     const [state, dispatch] = useReducer(updateTimes, initializeTimes);
+
+    // const navigate = useNavigate();
+
+    // const submitForm = (event, form) => {
+    //     event.preventDefault();
+    //     console.log(form);
+    //     if (submitAPI(form)) {
+    //         navigate('/booking-confirmation');
+    //     }
+    // }
 
     return (
         <>

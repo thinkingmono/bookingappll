@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { submitAPI } from '../../utils/WebApi';
 import ImgUp from '../../assets/img/reservations/restaurant.jpg';
 import ImgDown from '../../assets/img/reservations/restaurant chef B.jpg';
 
@@ -10,16 +12,20 @@ const BookingForm = (props) => {
         selectTime: '',
         inputGuest: 1,
         selectOccasion: '',
-        radioSeating: '',
+        radioSeating: 'standard',
         inputName: '',
         inputEmail: '',
         inputPhone: '',
-        checkboxTerms: ''
+        checkboxTerms: false
     });
 
-    const handleSubmit = (e) => {
+    const navigate = useNavigate();
+
+    const submitForm = (e) => {
         e.preventDefault();
-        console.log('Your reservation was made successfully');
+        if (submitAPI(form)) {
+            navigate('/booking-confirmation');
+        }
     }
 
     return (
@@ -29,7 +35,7 @@ const BookingForm = (props) => {
                 <div className="container">
                     {/* Booking Info */}
                     <div className="form">
-                        <form>
+                        <form onSubmit={submitForm}>
                             {/* Booking Info */}
                             <h3>Reservation</h3>
                             <label htmlFor="res-date">Date *
@@ -62,11 +68,11 @@ const BookingForm = (props) => {
                                 </select>
                             </label>
                             <h4>Seating Options *</h4>
-                            <div className="radio-group">
+                            <div className="radio-group" onChange={(e) => setForm({ ...form, radioSeating: e.target.value })}>
                                 <label htmlFor="standard">Standard</label>
-                                <input type="radio" id="standard" name="seating-options" defaultChecked value={form.radioSeating} onChange={(e) => setForm({ ...form, radioSeating: e.target.value })} />
+                                <input type="radio" id="standard" name="seating-options" defaultChecked value="standard" />
                                 <label htmlFor="outside">Outside</label>
-                                <input type="radio" id="outside" name="seating-options" value={form.radioSeating} onChange={(e) => setForm({ ...form, radioSeating: e.target.value })} />
+                                <input type="radio" id="outside" name="seating-options" value="outside" />
                             </div>
                             {/* Personal Info */}
                             <h3>Personal Information</h3>
@@ -77,13 +83,13 @@ const BookingForm = (props) => {
                                 <input type="email" id="email" name="email" placeholder="Email *" required value={form.inputEmail} onChange={(e) => setForm({ ...form, inputEmail: e.target.value })} />
                             </label>
                             <label htmlFor="phone">
-                                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder="Phone (Optional)" value={form.inputPhone} onChange={(e) => setForm({ ...form, inputPhone: e.target.value })} />
+                                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}[0-9]{2}[0-9]{3}" placeholder="Phone (Optional)" value={form.inputPhone} onChange={(e) => setForm({ ...form, inputPhone: e.target.value })} />
                             </label>
                             <div className="checkbox-terms">
-                                <input type="checkbox" id="terms-cond" name="terms-cond" required value={form.checkboxTerms} onChange={(e) => setForm({ ...form, checkboxTerms: e.target.value })} />
+                                <input type="checkbox" id="terms-cond" name="terms-cond" required value={form.checkboxTerms} onChange={(e) => setForm({ ...form, checkboxTerms: e.target.checked })} />
                                 <label htmlFor="terms-cond">I agree to terms and conditions *</label>
                             </div>
-                            <input type="submit" value="Reserve table" onSubmit={handleSubmit} />
+                            <input type="submit" value="Reserve table" disabled={!form.inputDate || !form.inputName || !form.inputEmail || !form.checkboxTerms} />
                         </form>
                     </div>
                     <div className="images">

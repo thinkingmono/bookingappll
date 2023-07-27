@@ -597,6 +597,11 @@ form input[type="submit"]:hover {
     color: #edefee;
 }
 
+form input[type="submit"]:disabled{
+    background-color: #ccc;
+    color: #fafafa;
+}
+
 #reservations .images .img {
     width: 90%;
     height: 40%;
