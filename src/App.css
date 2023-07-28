@@ -452,7 +452,7 @@ footer li a {
 }
 
 /*MAKE YOUR RESERVATIONS FORM*/
-#reservations {
+#reservations{
     display: flex;
     flex-direction: column;
     row-gap: 30px;
@@ -466,7 +466,8 @@ footer li a {
     color: #f4ce14;
 }
 
-#reservations .container {
+#reservations .container,
+#confirmation-page .container {
     display: flex;
     flex-direction: row;
     column-gap: 50px;
@@ -602,7 +603,7 @@ form input[type="submit"]:disabled{
     color: #fafafa;
 }
 
-#reservations .images .img {
+#reservations .images .img{
     width: 90%;
     height: 40%;
     border: 1px solid #000;
@@ -611,11 +612,79 @@ form input[type="submit"]:disabled{
     overflow: hidden;
 }
 
-#reservations .images .img img {
+#reservations .images .img img,
+#confirmation-page .images .img img{
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
+}
+
+/*CONFIRMATION PAGE*/
+#confirmation-page{
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 60px 100px;
+    background-color: #edefee;
+}
+
+#confirmation-page .confirmation-msg-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+#confirmation-page .confirmation-msg{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+#confirmation-page .confirmation-msg-col h2{
+    color: #495e57;
+    text-align: center;
+    line-height: 0.8em;
+}
+
+#confirmation-page .confirmation-msg-col p, li{
+    font-family: 'Karla', serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    width: 100%;
+}
+
+#confirmation-page .confirmation-msg-col ul {
+    padding: 0px 25px;
+}
+
+#confirmation-page .images{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 30px;
+    flex: 1;
+}
+
+#confirmation-page .images .img {
+    width: 90%;
+    height: 90%;
+    border: 1px solid #000;
+    border-radius: 16px;
+    box-shadow: -5px 5px 5px #333;
+    overflow: hidden;
+}
+
+#confirmation-page .button-primary{
+    width: 90%;
+    margin-top: 15px;
+    align-self: center;
+    text-align: center;
 }
 
 /*WEEKLY SPECIALS*/
@@ -849,20 +918,23 @@ form input[type="submit"]:disabled{
     }
 
     /*MAKE YOUR RESERVATION*/
-    #reservations {
+    #reservations, #confirmation-page {
         padding: 50px 20px 100px;
     }
 
-    #reservations h2 {
+    #reservations h2,
+    #confirmation-page h2 {
         line-height: 0.8em;
         text-align: center;
     }
 
-    #reservations .container {
+    #reservations .container,
+    #confirmation-page .container{
         width: 90vw;
     }
 
-    #reservations .images {
+    #reservations .images,
+    #confirmation-page .images {
         display: none;
     }
 }
@@ -902,11 +974,13 @@ form input[type="submit"]:disabled{
     }
 
     /*MAKE YOUR RESERVATION*/
-    #reservations {
+    #reservations,
+    #confirmation-page {
         padding: 50px 20px 100px;
     }
 
-    #reservations .container {
+    #reservations .container,
+    #confirmation-page .container {
         width: 90vw;
         column-gap: 20px;
     }

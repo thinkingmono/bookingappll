@@ -19,15 +19,13 @@ function BookingPage() {
 
     const [state, dispatch] = useReducer(updateTimes, initializeTimes);
 
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
-    // const submitForm = (event, form) => {
-    //     event.preventDefault();
-    //     console.log(form);
-    //     if (submitAPI(form)) {
-    //         navigate('/booking-confirmation');
-    //     }
-    // }
+    const submitForm = (form) => {
+        if (submitAPI(form)) {
+            navigate('/booking-confirmation');
+        }
+    }
 
     return (
         <>
@@ -35,7 +33,7 @@ function BookingPage() {
                 {/* Hero banner reservation */}
                 <HeroBook />
                 {/* Reservation Form */}
-                <BookingForm availableTimes={state.times} dispatch={dispatch} />
+                <BookingForm availableTimes={state.times} dispatch={dispatch} submitForm={submitForm}/>
                 {/* Weekly Specials */}
                 <CallToAction />
             </main>

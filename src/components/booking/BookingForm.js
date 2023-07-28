@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { submitAPI } from '../../utils/WebApi';
 import ImgUp from '../../assets/img/reservations/restaurant.jpg';
 import ImgDown from '../../assets/img/reservations/restaurant chef B.jpg';
 
@@ -19,13 +17,9 @@ const BookingForm = (props) => {
         checkboxTerms: false
     });
 
-    const navigate = useNavigate();
-
-    const submitForm = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        if (submitAPI(form)) {
-            navigate('/booking-confirmation');
-        }
+        props.submitForm(form);
     }
 
     return (
@@ -35,7 +29,7 @@ const BookingForm = (props) => {
                 <div className="container">
                     {/* Booking Info */}
                     <div className="form">
-                        <form onSubmit={submitForm}>
+                        <form onSubmit={handleSubmit}>
                             {/* Booking Info */}
                             <h3>Reservation</h3>
                             <label htmlFor="res-date">Date *
