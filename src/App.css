@@ -507,7 +507,7 @@ form label {
     font-family: 'Karla', serif;
     font-size: 18px;
     font-weight: 700;
-    color: #000;
+    color: #edefee;
     width: 100%;
 }
 
@@ -600,7 +600,21 @@ form input[type="submit"]:hover {
 
 form input[type="submit"]:disabled{
     background-color: #ccc;
-    color: #fafafa;
+    color: #555;
+}
+
+form input[aria-invalid=true]{
+    border: 2px solid red;
+}
+
+form .input-error{
+    font-family: 'Karla', serif;
+    color: red;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: rgb(251,231,239);
+    padding: 5px 10px;
+    margin-top: 5px;
 }
 
 #reservations .images .img{
@@ -650,7 +664,8 @@ form input[type="submit"]:disabled{
     line-height: 0.8em;
 }
 
-#confirmation-page .confirmation-msg-col p, li{
+#confirmation-page .confirmation-msg-col p,
+#confirmation-page .confirmation-msg-col li{
     font-family: 'Karla', serif;
     font-size: 16px;
     font-weight: 400;
