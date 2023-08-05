@@ -13,10 +13,10 @@ const Hero = () => {
                             focused on traditional
                             recipes served with a modern
                             twist</p>
-                        <a href="/reservations" role="button" className="button-primary">Reserve a table</a>
+                        <a href="/reservations" role="button" className="button-primary" aria-label="Go to booking page">Reserve a table</a>
                     </div>
                     <div className="hero-image">
-                        <img src={heroImg} alt="Dish example" width="375" height="400" />
+                        <img src={heroImg} alt="Restaurant's food show" width="375" height="400" />
                     </div>
                 </div>
             </section>

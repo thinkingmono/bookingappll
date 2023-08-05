@@ -15,11 +15,11 @@ const ConfirmedBooking = () => {
                                 <li>Please arrive 10 minutes earlier to Little Lemon Restaurant to process your reservation.</li>
                                 <li>If you have any doubt, write to reservations@littlelemon.com, one of our agents will get in touch with you to answer your questions.</li>
                             </ul>
-                            <a href="/reservations" role="button" className='button-primary'>Make another reservation</a>
+                            <a href="/reservations" role="button" className='button-primary' aria-label="Make another reservation">Make another reservation</a>
                         </div>
                     </div>
                     <div className="images">
-                        <div className="img up"><img src={ImgUp} alt="Restaurant" /></div>
+                        <div className="img up"><img src={ImgUp} alt="Little Lemon Restaurant" /></div>
                     </div>
                 </div>
             </section>

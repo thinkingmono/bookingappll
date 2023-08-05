@@ -13,7 +13,7 @@ const HeroBook = () => {
                             focused on traditional
                             recipes served with a modern
                             twist</p>
-                        <a href="#reservations" role="button" className="button-primary">Reserve a table</a>
+                        <a href="#reservations" role="button" className="button-primary" aria-label="Go to booking section">Reserve a table</a>
                     </div>
                     <div className="empty-column">
                     </div>

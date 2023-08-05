@@ -126,7 +126,7 @@ const BookingForm = (props) => {
                                         setForm({ ...form, inputDate: e.target.value });
                                         checkDate(e);
                                     }
-                                    } aria-invalid={dateError !== null} onBlur={(e) => checkDate(e)} />
+                                    } aria-invalid={dateError !== null} aria-label="Pick a date" onBlur={(e) => checkDate(e)} />
                                 {dateError && (<p className="input-error">{dateError}</p>)}
                             </label>
                             <label htmlFor="res-time">Time *
@@ -134,7 +134,7 @@ const BookingForm = (props) => {
                                     onChange={(e) => {
                                         setForm({ ...form, selectTime: e.target.value });
                                         checkTime(e);
-                                    }} aria-invalid={timeError !== null} onBlur={(e) => checkTime(e)} required>
+                                    }} aria-invalid={timeError !== null} aria-label="Pick a time" onBlur={(e) => checkTime(e)} required>
                                     {props.availableTimes ? props.availableTimes.map((time) => {
                                         return <option data-testid="available-time" key={time} value={time}>{time}</option>
                                     }) : null}
@@ -145,11 +145,11 @@ const BookingForm = (props) => {
                                 <input data-testid="guest" type="number" id="guest" name="guest" min="1" max="10" required value={form.inputGuest} onChange={(e) => {
                                     setForm({ ...form, inputGuest: e.target.value });
                                     checkGuest(e);
-                                }} aria-invalid={guestError !== null} onBlur={(e) => checkGuest(e)} />
+                                }} aria-invalid={guestError !== null} aria-label="Guest Quantity" onBlur={(e) => checkGuest(e)} />
                                 {guestError && (<p className="input-error">{guestError}</p>)}
                             </label>
                             <label htmlFor="ocassion">Occasion
-                                <select data-testid="occasion" id="ocassion" name="ocassion" value={form.selectOccasion} onChange={(e) => setForm({ ...form, selectOccasion: e.target.value })}>
+                                <select data-testid="occasion" id="ocassion" name="ocassion" value={form.selectOccasion} onChange={(e) => setForm({ ...form, selectOccasion: e.target.value })} aria-label="Select an occasion">
                                     <option value=""></option>
                                     <option value="Birthday">Birthday</option>
                                     <option value="Engagement">Engagement</option>
@@ -159,9 +159,9 @@ const BookingForm = (props) => {
                             <h4>Seating Options *</h4>
                             <div className="radio-group" onChange={(e) => setForm({ ...form, radioSeating: e.target.value })}>
                                 <label htmlFor="standard">Standard</label>
-                                <input data-testid="standard" type="radio" id="standard" name="seating-options" defaultChecked value="standard" />
+                                <input data-testid="standard" type="radio" id="standard" name="seating-options" defaultChecked value="standard" aria-label="Standard Seating"/>
                                 <label htmlFor="outside">Outside</label>
-                                <input data-testid="outside" type="radio" id="outside" name="seating-options" value="outside" />
+                                <input data-testid="outside" type="radio" id="outside" name="seating-options" value="outside" aria-label="Outside Seating"/>
                             </div>
                             {/* Personal Info */}
                             <h3>Personal Information</h3>
@@ -169,33 +169,33 @@ const BookingForm = (props) => {
                                 <input data-testid="name" type="text" id="name" name="name" placeholder="Name *" required minLength={3} value={form.inputName} onChange={(e) => {
                                     setForm({ ...form, inputName: e.target.value });
                                     checkName(e);
-                                }} aria-invalid={nameError !== null} onBlur={(e) => checkName(e)} />
+                                }} aria-invalid={nameError !== null} aria-label="Reservation's Name" onBlur={(e) => checkName(e)} />
                                 {nameError && (<p className="input-error">{nameError}</p>)}
                             </label>
                             <label htmlFor="email">
                                 <input data-testid="email" type="email" id="email" name="email" placeholder="Email *" required value={form.inputEmail} onChange={(e) => {
                                     setForm({ ...form, inputEmail: e.target.value });
                                     checkEmail(e);
-                                }} aria-invalid={emailError !== null} onBlur={(e) => checkEmail(e)} />
+                                }} aria-invalid={emailError !== null} aria-label="Email contact" onBlur={(e) => checkEmail(e)} />
                                 {emailError && (<p className="input-error">{emailError}</p>)}
                             </label>
                             <label htmlFor="phone">
-                                <input data-testid="phone" type="tel" id="phone" name="phone" pattern="[0-9]{3}[0-9]{2}[0-9]{3}" placeholder="Phone" value={form.inputPhone} onChange={(e) => setForm({ ...form, inputPhone: e.target.value })} />
+                                <input data-testid="phone" type="tel" id="phone" name="phone" pattern="[0-9]{3}[0-9]{2}[0-9]{3}" placeholder="Phone" value={form.inputPhone} onChange={(e) => setForm({ ...form, inputPhone: e.target.value })} aria-label="Contact Phone"/>
                             </label>
                             <div className="checkbox-terms">
                                     <input data-testid="terms-cond" type="checkbox" id="terms-cond" name="terms-cond" required value={form.checkboxTerms} onChange={(e) => {
                                         setForm({ ...form, checkboxTerms: e.target.checked });
                                         checkTerms(e.target.checked);
-                                    }} />
+                                    }} aria-label="Terms and Conditions"/>
                                     <label htmlFor="terms-cond">I agree to terms and conditions *</label>
                                     { termsError && (<p className="input-error">{termsError}</p>)}
                             </div>
-                            <input data-testid="submit-btn" type="submit" value="Reserve table" disabled={!form.inputDate || !form.inputName || !form.inputEmail || !form.checkboxTerms} />
+                            <input data-testid="submit-btn" type="submit" value="Reserve table" disabled={!form.inputDate || !form.inputName || !form.inputEmail || !form.checkboxTerms} aria-label="Reserve a table"/>
                         </form>
                     </div>
                     <div className="images">
-                        <div className="img up"><img src={ImgUp} alt="Restaurant" /></div>
-                        <div className="img down"><img src={ImgDown} alt="Chef" /></div>
+                        <div className="img up"><img src={ImgUp} alt="Little Lemon Restaurant" /></div>
+                        <div className="img down"><img src={ImgDown} alt="Little Lemon Chef" /></div>
                     </div>
                 </div>
             </section>

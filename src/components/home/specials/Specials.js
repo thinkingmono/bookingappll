@@ -36,7 +36,7 @@ const Specials = () => {
             <section id="week-specials">
                 <div className="title">
                     <h2>This weeks specials!</h2>
-                    <a href="/online-menu" role="button" className="button-primary">Online Menu</a>
+                    <a href="/online-menu" role="button" className="button-primary" aria-label="Go to menu page">Online Menu</a>
                 </div>
                 <div className="specials">
                     {dishes.map((dish,index) => {

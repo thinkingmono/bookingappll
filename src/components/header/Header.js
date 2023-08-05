@@ -12,9 +12,9 @@ function Header() {
                     <Nav />
                 </div>
                 <div className="app-header-mobile">
-                    <img src={menu} alt="" className="" />
-                    <img src={logo} alt="" className="" />
-                    <img src={basket} alt="" className="" />
+                    <img src={menu} alt="Hamburguer Mobile Menu" className="" />
+                    <img src={logo} alt="Little Lemon's Logo" className="" />
+                    <img src={basket} alt="Basket Icon" className="" />
                 </div>
             </header>
         </>
