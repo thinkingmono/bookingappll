@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Dish from './Dish';
 import Salad from '../../../assets/img/home/greek_salad.jpg';
 import Bruchetta from '../../../assets/img/home/bruchetta.png';
@@ -36,7 +37,7 @@ const Specials = () => {
             <section id="week-specials">
                 <div className="title">
                     <h2>This weeks specials!</h2>
-                    <a href="/online-menu" role="button" className="button-primary" aria-label="Go to menu page">Online Menu</a>
+                    <Link to="/" role="button" className="button-primary" aria-label="Go to menu page">Online Menu</Link>
                 </div>
                 <div className="specials">
                     {dishes.map((dish,index) => {
