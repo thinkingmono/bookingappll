@@ -21,7 +21,6 @@ const fetchAPI = date => {
 // const submitAPI = formData => true;
 const submitAPI = (formData) => {
     if(formData){
-        console.log(formData);
         return true;
     }else{
         return false;

@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import ModalDetails from './ModalDetails';
 import ImgUp from '../../assets/img/reservations/restaurant.jpg';
 import ImgDown from '../../assets/img/reservations/restaurant chef B.jpg';
+import InfoIcon from '../../assets/img/reservations/information-icon.png';
 
 
 const BookingForm = (props) => {
@@ -106,11 +108,21 @@ const BookingForm = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        props.submitForm(form);
+        setShowModal(true);
     }
+
+    const [showModal, setShowModal] = useState(false);
+    const [submit, setSubmit] = useState(false);
+
+    useEffect(() => {
+        if(submit === true) props.submitForm(form);
+    },[submit])
 
     return (
         <>
+            {showModal === true ? (
+                <ModalDetails formData={form} setShowModal={setShowModal} setSubmit={setSubmit}/>
+            ): null}
             <section id="reservations">
                 <h2>Make your reservation</h2>
                 <div className="container">
@@ -119,7 +131,7 @@ const BookingForm = (props) => {
                         <form onSubmit={handleSubmit} noValidate>
                             {/* Booking Info */}
                             <h3>Reservation</h3>
-                            <label htmlFor="res-date">Date *
+                            <label htmlFor="res-date">Date *<img src={InfoIcon} alt="Information icon" aria-label="Please select your reservation's date" className='info-icon'/><span className='tooltip'>Please select your reservation's date</span>
                                 <input data-testid="res-date" type="date" id="res-date" name="res-date" required value={form.inputDate}
                                     onChange={(e) => {
                                         props.dispatch({ type: 'DATE_CHANGE', date: e.target.value });
@@ -129,7 +141,7 @@ const BookingForm = (props) => {
                                     } aria-invalid={dateError !== null} aria-label="Pick a date" onBlur={(e) => checkDate(e)} />
                                 {dateError && (<p className="input-error">{dateError}</p>)}
                             </label>
-                            <label htmlFor="res-time">Time *
+                            <label htmlFor="res-time">Time *<img src={InfoIcon} alt="Information icon" aria-label="Please select your reservation's time" className='info-icon'/><span className='tooltip'>Please select your reservation's time</span>
                                 <select data-testid="res-time" id="res-time" name="res-time" value={form.selectTime}
                                     onChange={(e) => {
                                         setForm({ ...form, selectTime: e.target.value });
@@ -141,14 +153,14 @@ const BookingForm = (props) => {
                                 </select>
                                 {timeError && (<p className="input-error">{timeError}</p>)}
                             </label>
-                            <label htmlFor="guest">Guest *
+                            <label htmlFor="guest">Guest *<img src={InfoIcon} alt="Information icon" aria-label="Please select the quantity of guest in your table. Must be between 1 and 10 guest." className='info-icon'/><span className='tooltip'>Please select the quantity of guest in your table. Must be between 1 and 10 guest.</span>
                                 <input data-testid="guest" type="number" id="guest" name="guest" min="1" max="10" required value={form.inputGuest} onChange={(e) => {
                                     setForm({ ...form, inputGuest: e.target.value });
                                     checkGuest(e);
                                 }} aria-invalid={guestError !== null} aria-label="Guest Quantity" onBlur={(e) => checkGuest(e)} />
                                 {guestError && (<p className="input-error">{guestError}</p>)}
                             </label>
-                            <label htmlFor="ocassion">Occasion
+                            <label htmlFor="ocassion">Occasion<img src={InfoIcon} alt="Information icon" aria-label="If you planned something special please select the occasion" className='info-icon'/><span className='tooltip'>If you planned something special please select the occasion.</span>
                                 <select data-testid="occasion" id="ocassion" name="ocassion" value={form.selectOccasion} onChange={(e) => setForm({ ...form, selectOccasion: e.target.value })} aria-label="Select an occasion">
                                     <option value=""></option>
                                     <option value="Birthday">Birthday</option>
@@ -156,7 +168,7 @@ const BookingForm = (props) => {
                                     <option value="Anniversary">Anniversary</option>
                                 </select>
                             </label>
-                            <h4>Seating Options *</h4>
+                            <h4>Seating Options *<img src={InfoIcon} alt="Information icon" aria-label="Please select if you want to seat inside or outside restaurant" className='info-icon'/><span className='tooltip'>Please select if you want to seat inside or outside restaurant.</span></h4>
                             <div className="radio-group" onChange={(e) => setForm({ ...form, radioSeating: e.target.value })}>
                                 <label htmlFor="standard">Standard</label>
                                 <input data-testid="standard" type="radio" id="standard" name="seating-options" defaultChecked value="standard" aria-label="Standard Seating"/>
@@ -187,7 +199,7 @@ const BookingForm = (props) => {
                                         setForm({ ...form, checkboxTerms: e.target.checked });
                                         checkTerms(e.target.checked);
                                     }} aria-label="Terms and Conditions"/>
-                                    <label htmlFor="terms-cond">I agree to terms and conditions *</label>
+                                    <label htmlFor="terms-cond">I agree to terms and conditions *</label><img src={InfoIcon} alt="Information icon" aria-label="Please check terms and conditions of use. Information collect by the form is only for reservation purpose" className='info-icon'/><span className='tooltip'>Please check terms and conditions of use. Information collect by the form is only for reservation purpose.</span>
                                     { termsError && (<p className="input-error">{termsError}</p>)}
                             </div>
                             <input data-testid="submit-btn" type="submit" value="Reserve table" disabled={!form.inputDate || !form.inputName || !form.inputEmail || !form.checkboxTerms} aria-label="Reserve a table"/>
